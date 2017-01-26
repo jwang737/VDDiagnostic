@@ -43,29 +43,29 @@ while iEnd <= length(x)-windowSize
 end
 storePPQ = storePPQ(N+1:n-1);
 storeAPQ = storeAPQ(N+1:n-1);
-jitter = mean(storePPQ)%maybe variance can be an indicator in addition to mean?
-shimmer = mean(storeAPQ)
+jitter = mean(storePPQ);%maybe variance can be an indicator in addition to mean?
+shimmer = mean(storeAPQ);
 if shimmer >= 100
     shimmer = 0;
 end
 frequency = f;
 %plot
-subplot(3,1,1)
-plot(x)
-xlabel({'Samples'});
-ylabel({'Normalized Amplitude'});
-title({'Waveform'});
-
-subplot(3,1,2)
-plot(storePPQ)
-xlabel({'Blocks'});
-ylabel({'PPQ'});
-title({'Jitter'});
-
-subplot(3,1,3)
-plot(storeAPQ)
-xlabel({'Blocks'});
-ylabel({'APQ'});
-title({'Shimmer'});
+% subplot(3,1,1)
+% plot(x)
+% xlabel({'Samples'});
+% ylabel({'Normalized Amplitude'});
+% title({'Waveform'});
+% 
+% subplot(3,1,2)
+% plot(storePPQ)
+% xlabel({'Blocks'});
+% ylabel({'PPQ'});
+% title({'Jitter'});
+% 
+% subplot(3,1,3)
+% plot(storeAPQ)
+% xlabel({'Blocks'});
+% ylabel({'APQ'});
+% title({'Shimmer'});
 end
 

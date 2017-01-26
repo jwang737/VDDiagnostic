@@ -3,7 +3,8 @@ function [ClassificationPerformance] = crossValidation(FEAT, groundTruth, K )
 %   Detailed explanation goes here
 
 FEAT = FEAT(mod(size(FEAT,1),K)+1:end,:);
-groundTruth = groundTruth(mod(size(groundTruth,1),K)+1:end);
+groundTruth = groundTruth(mod(size(FEAT,1),K)+1:end);
+
 
 %Shuffle dataset
 %randomizing
@@ -15,10 +16,6 @@ for i = 1:size(FEAT,1)
     randFEAT(i,:) = FEAT(I(i),:);
     randTruth(i) = groundTruth(I(i));
 end
-%rather than changing all the names
-FEAT = randFEAT;
-groundTruth = randTruth;
-
 % n = number of folds
 n = 10;
 % s = size of fold

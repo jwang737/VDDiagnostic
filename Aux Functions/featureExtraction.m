@@ -1,17 +1,14 @@
-function [TotalFeatArray ] = featureExtraction(filenameArray)
+function [TotalFeatArray] = featureExtraction(filenameArray)
 %getFeatures
-%   This function computes FFT and MFCC features for the dataset passed to
+%   This function computes MFCC, jitter and shimmer features for the dataset passed to
 %   it. Functions to detect the keystroke onsets and segment the audio are
-%   called. Features are extracted from small segments of audio, tiny
-%   snippets of the key being pressed. The function returns both features
+%   called. The function returns features'
 %   matrices for the particular dataset
 
-    %Initializing feature matrices
-    %TotalFFTArray = [];
+    %Initializing feature matrix
     TotalFeatArray = [];
-    %TotalJitArray = [];
-    %TotalShimArray = [];
-    
+    %Audiofile directory
+    cd('/Users/jonathanwang/Desktop/7100 /VDDiagnostic/Audio')
     %Read in audio files
     for filenumber = 1:length(filenameArray)%for each file
         filename = filenameArray{filenumber};%read in filename
